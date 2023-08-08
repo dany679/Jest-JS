@@ -1,6 +1,6 @@
-import React from 'react'
-import TodoFooter from '../TodoFooter/TodoFooter'
-import "./TodoList.css"
+import React from 'react';
+import TodoFooter from '../TodoFooter/TodoFooter';
+import "./TodoList.css";
 
 function TodoList({
     todos, setTodos
@@ -33,6 +33,8 @@ function TodoList({
                     {
                         todos.map((todo, index) => (
                             <div 
+                            data-testid={"todoListTestId"}
+                            key={todo.id}
                                 className={`todo-item ${todo.completed && "todo-item-active"}`} 
                                 onClick={() => updateTask(todo.id)}
                             >
