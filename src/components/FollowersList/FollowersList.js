@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import "./FollowersList.css"
-import axios from "axios"
+import axios from "axios";
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import "./FollowersList.css";
 
 export default function FollowersList() {
 
@@ -19,8 +19,11 @@ export default function FollowersList() {
     return (
         <div className="followerslist-container">
             <div>
-                {followers.map(follower => (
-                    <div className="follower-item">
+                {followers.length>0 &&followers.map((follower , index)=> (
+                    <div className="follower-item"
+                    key={index}
+                    data-testid={`follower-item-${index}`}
+                    >
                         <img src={follower.picture.large}/>
                         <div className="followers-details">
                             <div className="follower-item-name">
